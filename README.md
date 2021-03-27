@@ -1,7 +1,13 @@
+## Youtube tutorial
+
+Youtube tutorial used as knowledge base for this repo is https://youtube.com/playlist?list=PL-lCrD3QqynVhD4Zhb0XXuNfgWi5Niq93
+
 ## How to use keycloak
+Start keycloak with docker-compose
 
+```
 docker-compose -f ./keycloak/keycloak-postgres.yml up
-
+```
 
 
 # vue-keycloak
