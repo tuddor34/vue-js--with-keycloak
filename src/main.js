@@ -8,15 +8,15 @@ import VueJwtDecode from "vue-jwt-decode";
 import {store} from "./store/store";
 
 const router = new VueRouter({
+    mode: 'history',
     routes: routes
 });
 router.beforeEach((to, from, next) => {
-    console.log("Before each was called");
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (router.app.$keycloak.authenticated) {
             next();
         } else {
-            router.app.$keycloak.login();
+            router.app.$keycloak.login({redirectUri: window.location.origin + to.path});
         }
     } else {
         next();
@@ -60,13 +60,13 @@ keycloak.init({
 
 
 function updateStoreBasedOnToken(token) {
-    console.log("Updating store based on token ", token);
     const decoded_token = VueJwtDecode.decode(token);
     const roles = decoded_token.realm_access.roles;
     const firstname = decoded_token.given_name;
     const lastname = decoded_token.family_name;
 
 
+    store.commit("isLoggedIn", true);
     store.commit("store_firstname", firstname);
     store.commit("store_lastname", lastname);
     store.commit("store_roles", roles);

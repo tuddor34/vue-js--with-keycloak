@@ -40,7 +40,7 @@
         }),
         methods: {
             logout() {
-                this.$keycloak.logout();
+                this.$keycloak.logout({redirectUri: "http://127.0.0.1:3000/"});
             }
         }
     };
