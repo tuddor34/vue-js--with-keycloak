@@ -66,7 +66,7 @@ function updateStoreBasedOnToken(token) {
     const lastname = decoded_token.family_name;
 
 
-    store.commit("isLoggedIn", true);
+    store.commit("store_isLoggedIn", true);
     store.commit("store_firstname", firstname);
     store.commit("store_lastname", lastname);
     store.commit("store_roles", roles);

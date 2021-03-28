@@ -23,7 +23,7 @@ export const store = new Vuex.Store({
         store_roles(state, data) {
             state.userData.roles = data;
         },
-        sore_isLoggedIn(state, data) {
+        store_isLoggedIn(state, data) {
             state.userData.isLoggedIn = data;
         }
     }
