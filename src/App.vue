@@ -9,6 +9,9 @@
             </div>
 
             <v-spacer></v-spacer>
+            <v-btn text to="/user-profile">
+                Profile
+            </v-btn>
             <v-btn text to="/">
                 Home
             </v-btn>

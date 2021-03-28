@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         userData: {
+            isLoggedIn: undefined,
             firstName: "",
             lastName: "",
             roles: []
@@ -22,5 +23,8 @@ export const store = new Vuex.Store({
         store_roles(state, data) {
             state.userData.roles = data;
         },
+        sore_isLoggedIn(state, data) {
+            state.userData.isLoggedIn = data;
+        }
     }
 });
