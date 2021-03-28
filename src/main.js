@@ -43,7 +43,6 @@ keycloak.init({
     new Vue({
         vuetify, router, store,
         created() {
-            console.log("Created was called ", this);
             this.$watch('$keycloak.authenticated', (authenticated) => {
                 console.log("Keycloak authenticated changed to: ", authenticated);
             }, {immediate: true})
